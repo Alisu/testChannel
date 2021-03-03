@@ -1,0 +1,34 @@
+using system; 
+
+public class B{
+    private int someInt;
+}
+public class A{
+    private B b;
+
+    public A(B someB){
+        b = someB;
+   }
+}
+
+public class Example
+{
+    public static void Main()
+    {
+        B b = new B();
+        A a = new A(b);
+        Channel testChannel = Channel<A>();
+
+        public async Task WriteThenRead(){
+            ChannelWriter<A> writer = testChannel.Writer;
+            ChannelReader<A> reader = testChannel.Reader;
+ 
+            writer.TryWrite(a);
+            await reader.ReadAsync();
+            
+        }
+
+
+        Console.WriteLine("Hello");
+    }
+}
