@@ -28,8 +28,8 @@ fn main() {
 
     thread::spawn(move || {
 
-        let mut user1 = User {
-            email: String::from("someone@example.com"),
+        let mut user1 = User {                                  
+            email: String::from("someone@example.com"),             
             username: String::from("someusername123"),
             active: true,
             sign_in_count: 1,
